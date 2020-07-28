@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     response = {"key": 1, "value": "test"}
     print(type(response))
-    return render_template('index.html')
+    return response
 
 
 if __name__ == "__main__":
