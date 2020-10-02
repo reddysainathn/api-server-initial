@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, url_for
 from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 
 @app.route("/")
 def index():
-    return jsonify({'msg':'Hello World!'})
+    return render_template('welcome.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
