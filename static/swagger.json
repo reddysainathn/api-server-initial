@@ -72,7 +72,7 @@
     },
     "components": {
         "schemas": {
-            "bookRequestPostBody": {
+            "postInfoRequestBody": {
                 "type": "object",
                 "properties": {
                     "data": {
