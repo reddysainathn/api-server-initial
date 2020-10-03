@@ -16,19 +16,99 @@
         "url": "/"
     }],
     "tags": [{
-        "name": "Book Request",
-        "description": "Example API for requesting and return book requests"
+        "name": "Flask API's",
+        "description": "Starter Flask Learner"
     }],
     "paths": {
         "/getInfo": {
             "get": {
                 "tags": [
-                    "Get Request"
+                    "Flask API's"
                 ],
                 "summary": "Returns Info",
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/getInfoResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/postInfo": {
+            "post": {
+                "tags": [
+                    "Flask API's"
+                ],
+                "summary": "Returns Info",
+                "requestBody": {
+                    "description": "Data Request Post Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/postInfoRequestBody"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/postInfoResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "bookRequestPostBody": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "title": {
+                                "type": "string",
+                                "format": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "postInfoResponse": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "title": {
+                        "type": "string",
+                        "format": "string"
+                    }
+                }
+            },
+            "getInfoResponse": {
+                "type": "object",
+                "properties": {
+                    "msg": {
+                        "type": "string",
+                        "format": "string"
                     }
                 }
             }
