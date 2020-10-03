@@ -11,5 +11,27 @@
             "name": "MIT",
             "url": "https://opensource.org/licenses/MIT"
         }
+    },
+    "servers": [{
+        "url": "/"
+    }],
+    "tags": [{
+        "name": "Book Request",
+        "description": "Example API for requesting and return book requests"
+    }],
+    "paths": {
+        "/getInfo": {
+            "get": {
+                "tags": [
+                    "Get Request"
+                ],
+                "summary": "Returns Info",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
     }
 }
