@@ -29,8 +29,12 @@
                 "responses": {
                     "200": {
                         "description": "OK",
-                        "schema": {
-                            "$ref": "#/components/schemas/getInfoResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/getInfoResponse"
+                                }
+                            }
                         }
                     }
                 }
@@ -59,8 +63,12 @@
                 "responses": {
                     "200": {
                         "description": "OK",
-                        "schema": {
-                            "$ref": "#/components/schemas/postInfoResponse"
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/postInfoResponse"
+                                }
+                            }
                         }
                     },
                     "400": {
